@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Death From Above - Approfondimento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="article-page">
+  
+ <header class="topbar"> 
+      <div class="left">
+        <img src="images/logo.png" alt="logo" class="logo"/>
+        <span class="name">Lookeye.inc</span>
+      </div>
+      <nav class="center">
+        <a href="sito.html#articoli">Articoli</a>
+      </nav>
+      <div class="right">
+        <a href="https://www.instagram.com/lookeye.inc/profilecard/?igsh=dDZuODZscnRpbDVo" target="_blank">
+          <img src="images/instaicon.png" alt="" class="icon"/>
+        </a> 
+      </div>
+    </header>
+
+  <header>
+    <section class="banner">
+      <img src="images/deathfromabove2.jpg" alt="" id="banner-image">
+    </section>
+      <h1 class="article-title" id="dynamic-title">Death from Above</h1>
+      <h2 class="subtitle">Narrazione, cultura e mass media</h2>
+  </header>
+
+  <section class="article-description">
+    <p>
+    <strong>Death from Above</strong> è un esempio lampante di come il videogioco possa diventare mezzo d’espressione politica. 
+    Pubblicato in early access nel 2023 dallo studio indipendente <em>Rockodile</em>, il titolo ci mette nei panni di un pilota di droni ucraino che combatte l’invasione russa. 
+    </p> 
+    <p>
+    Con uno stile <strong>arcade</strong>, caricaturale e volutamente ironico, il gioco unisce azione e satira per trasmettere un messaggio chiaro: sostenere l’Ucraina non solo con le armi, ma anche con l’immaginario, la cultura e la narrazione digitale.
+    Il progetto è <strong>dichiaratamente schierato</strong>: parte dei proventi viene donata alle forze armate ucraine e ad associazioni umanitarie locali.
+    </p>
+    <p>
+    Nonostante il tono leggero, <em>Death from Above</em> solleva interrogativi profondi: può un videogioco essere considerato <strong>propaganda</strong>? O si tratta, piuttosto, di resistenza culturale?
+    </p>
+    <p>
+    Nel contesto della guerra ibrida e della disinformazione digitale, anche il mondo videoludico si trasforma in un campo di battaglia simbolico, dove l’interattività rafforza empatia e identificazione. 
+    In questo senso, <em>Death from Above</em> è un piccolo ma significativo esempio di come il videogioco stia evolvendo in <strong>strumento di comunicazione</strong> sociale e politica.
+    </p>
+  </section>
+
+  <p style="text-align: center; margin-top: 40px;">
+    <a href="sito.html" class="btn">Torna alla home</a>
+</p>
+
+  <footer>
+    <p>&copy; 2025, Jacopo Albieri - Giacomo Zocco</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    const img = document.getElementById('banner-image');
+    const title = document.getElementById('dynamic-title');
+    const colorThief = new ColorThief();
+
+    if (img.complete) {
+      const color = colorThief.getColor(img);
+      title.style.color = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+    } else {
+      img.addEventListener('load', () => {
+        const color = colorThief.getColor(img);
+        title.style.color = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

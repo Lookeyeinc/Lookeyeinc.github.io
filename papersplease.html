@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Papers, Please - Approfondimento</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="article-page">
+
+   <header class="topbar"> 
+      <div class="left">
+        <img src="images/logo.png" alt="logo" class="logo"/>
+        <span class="name">Lookeye.inc</span>
+      </div>
+      <nav class="center">
+        <a href="sito.html#articoli">Articoli</a>
+      </nav>
+      <div class="right">
+        <a href="https://www.instagram.com/lookeye.inc/profilecard/?igsh=dDZuODZscnRpbDVo" target="_blank">
+          <img src="images/instaicon.png" alt="" class="icon"/>
+        </a> 
+      </div>
+    </header>
+
+  <header>
+    <section class="banner">
+        <img src="images/papersplease2.jpg" alt="The" id="banner-image">
+    </section>
+    <h1 class="article-title" id="dynamic-title">Papers, Please</h1>
+    <h2 class="subtitle">Narrazione, cultura e mass media</h2>
+  </header>
+
+  <section class="article-description">
+    <p>
+      <strong>"Preparate i documenti!"</strong> Con queste parole si apre ogni giornata lavorativa nell’ufficio immigrazione di Grestin, città di confine della fittizia repubblica di Arstotzka, stato con un regime comunista.
+      </p>
+      <p>
+      Siamo nel pieno dell’inverno del 1982, e il giocatore veste i panni di un funzionario statale incaricato di controllare l’ingresso dei cittadini stranieri. Dietro a ogni passaporto si nasconde una storia, una speranza, o una minaccia: tocca al giocatore decidere chi può attraversare il confine e chi deve essere respinto. 
+      </p>
+      <p>
+      In un regime oppressivo, dove <strong>ogni errore ha un prezzo</strong> e ogni scelta morale può condurre a conseguenze impreviste, <em>“Papers, Please”</em> ci mette di fronte a un dilemma costante tra dovere, umanità e sopravvivenza.
+      </p>
+      <p>
+      Il <strong>gameplay</strong> è scandito dall’arrivo dei richiedenti, che il giocatore dovrà ispezionare attentamente evitando di commettere errori, poiché per ognuno di questi riceverà un richiamo e, superati i tre richiami, bisognerà pagare una sanzione. Avanzando con i giorni i controlli si faranno sempre più <strong>rigidi e complessi</strong>, anche a causa dei continui attacchi terroristici messi in atto dalle nazioni confinanti, in guerra con Arstoska. 
+      </p>
+      <p>
+      Il giocatore sarà anche sottoposto a <strong>diverse scelte</strong>, come gestire il misero stipendio guadagnato, o se fare favori a colleghi e amici rischiando delle sanzioni, e infine se entrare in contatto o meno con “L’Ordine EZIC”,  un gruppo rivoluzionario che mira a sovvertire il governo per istituirne uno nuovo. Tutte queste decisioni cambieranno irrimediabilmente il corso della storia, portando a uno dei <strong>20 finali possibili</strong>.
+      </p>
+      <p>
+      <em>"Papers, Please”</em> è stato pubblicato nel 2013 da <em>Lucas Pope</em>, sviluppatore indipendente, il quale ha dichiarato di essersi ispirato ad alcune esperienze personali ai controlli d’immigrazione, essendo lui residente in Giappone.  
+      </p>
+</section>
+
+  <p style="text-align: center; margin-top: 40px;">
+    <a href="sito.html" class="btn">Torna alla home</a>
+</p>
+
+  <footer>
+    <p>&copy; 2025, Jacopo Albieri - Giacomo Zocco</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+<script>
+  window.addEventListener('load', () => {
+    const img = document.getElementById('banner-image');
+    const title = document.getElementById('dynamic-title');
+    const colorThief = new ColorThief();
+
+    if (img.complete) {
+      const color = colorThief.getColor(img);
+      title.style.color = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+    } else {
+      img.addEventListener('load', () => {
+        const color = colorThief.getColor(img);
+        title.style.color = `rgb(${color[0]}, ${color[1]}, ${color[2]})`;
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
