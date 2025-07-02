@@ -284,8 +284,8 @@ a:hover {
 }
 
 @media (max-width: 480px) {
-  .description.estesa, .article-description{
-    max-width: 95%;        /* fa sì che la larghezza sia al massimo il 95% dello schermo */
+  .description.estesa {
+    max-width: 90%;        /* fa sì che la larghezza sia al massimo il 95% dello schermo */
     margin: 20px auto;     /* margini verticali un po' più larghi */
     padding: 20px 15px;    /* padding un po' più piccolo per schermi stretti */
     font-size: 1rem;       /* riduci leggermente la dimensione del testo */
@@ -455,6 +455,15 @@ body.article-page{
   line-height: 1.6;
   border-left: 6px solid #4b74ff;
 }
+
+@media (max-width: 480px) {
+  .article-description{
+    max-width: 90%;        /* fa sì che la larghezza sia al massimo il 95% dello schermo */
+    margin: 20px auto;     /* margini verticali un po' più larghi */
+    padding: 20px 15px;    /* padding un po' più piccolo per schermi stretti */
+    font-size: 1rem;       /* riduci leggermente la dimensione del testo */
+    text-align: justify;   /* se vuoi puoi allineare giustificato per migliorare la leggibilità */
+  }
 
 .btn {
   background-color: rgba(0, 112, 209, 0.85);
