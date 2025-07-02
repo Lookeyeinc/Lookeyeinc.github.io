@@ -19,20 +19,29 @@
 
 <body>
     <header class="topbar"> 
-      <nav class="center">
-        <a href="Descrizione.html">Descrizione</a>
-        <a href="#articoli">Articoli</a>
-      </nav>
-      <div class="left">
-        <img src="images/logo.png" alt="logo" class="logo"/>
-        <span class="name">Lookeye.inc</span>
-      </div>
-      <div class="right">
-        <a href="https://www.instagram.com/lookeye.inc/profilecard/?igsh=dDZuODZscnRpbDVo" target="_blank">
-          <img src="images/instaicon.png" alt="" class="icon"/>
-        </a> 
-      </div>
-    </header>
+  <div class="left">
+    <img src="images/logo.png" alt="logo" class="logo"/>
+    <span class="name">Lookeye.inc</span>
+  </div>
+  
+  <nav class="desktop-nav">
+    <a href="Descrizione.html">Descrizione</a>
+    <a href="#articoli">Articoli</a>
+  </nav>
+  
+  <div class="right">
+    <a href="https://www.instagram.com/lookeye.inc/profilecard/?igsh=dDZuODZscnRpbDVo" target="_blank" class="icon-link">
+      <img src="images/instaicon.png" alt="Instagram" class="icon"/>
+    </a>
+      <button class="hamburger" aria-label="Apri menù">☰</button>
+  </div>
+  
+  <nav class="mobile-nav">
+    <a href="Descrizione.html">Descrizione</a>
+    <a href="#articoli">Articoli</a>
+  </nav>
+</header>
+    
     <header class="title-banner">  
       <h1 class= "title"> I videogiochi e i mass media</h1>
     </header>
@@ -145,6 +154,24 @@
 <p>&copy;   2025, Jacopo Albieri - Giacomo Zocco </p>
 </footer>
 <br> 
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const hamburger = document.querySelector('.hamburger');
+  const mobileNav = document.querySelector('.mobile-nav');
+  
+  // Controlla se gli elementi esistono prima di usarli
+  if (hamburger && mobileNav) {
+    hamburger.addEventListener('click', function() {
+      mobileNav.classList.toggle('active');
+    });
+  } else {
+    console.error("Elemento non trovato! Verifica:");
+    console.log("Hamburger:", hamburger);
+    console.log("Mobile Nav:", mobileNav);
+  }
+});
+</script>
 
 </body>
 </html>
