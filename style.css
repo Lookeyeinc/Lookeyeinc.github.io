@@ -14,6 +14,15 @@ html {
   scroll-behavior: smooth;
 }
 
+a, a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #aad4ff;
+}
+
 .topbar {
   display: flex;
   justify-content: space-between;
@@ -26,12 +35,28 @@ html {
   position: sticky;
   top: 0;
   z-index: 1000;
+  gap: 10px; 
 }
 
-.topbar .left {
+.topbar .right, 
+.topbar .left { 
+  flex: 1;
   display: flex;
   align-items: center;
   gap: 10px;
+}
+
+.topbar .right {
+  justify-content: flex-end;
+  gap: 20px;
+}
+
+.topbar .desktop-nav {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  align-items: center;
+  
 }
 
 .topbar .logo {
@@ -45,7 +70,133 @@ html {
   font-weight: 600;
 }
 
-.topbar .center {
+
+/* Desktop navigation 
+.desktop-nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 30px;
+}*/
+
+@media (min-width: 769px) {
+  .hamburger {
+    display: none !important; /* Nasconde l'hamburger su desktop */
+  }
+  .mobile-nav {
+    display: none !important; /* Nasconde il menu mobile su desktop */
+  }
+}
+
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;  /* Nasconde il menu desktop su mobile */
+  }
+}
+
+/*.desktop-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.2s ease;
+}
+
+.desktop-nav a:hover {
+  color: #aad4ff;
+}*/
+
+* Icon styles */
+.icon-link {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  height: 28px;
+  width: auto;
+  transition: opacity 0.2s ease;
+}
+
+.icon:hover {
+  opacity: 0.7;
+}
+
+/* Hamburger menu - hidden by default */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Mobile navigation - hidden by default */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  width: 100%;
+  background-color: #2a2755;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 15px 0;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.mobile-nav a {
+  color: white;
+  text-decoration: none;
+  padding: 10px 30px;
+  font-size: 1rem;
+  transition: background-color 0.2s ease;
+}
+
+.mobile-nav a:hover {
+  background-color: #3a3775;
+  color: #aad4ff;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .topbar {
+    padding: 10px 20px;
+  }
+  
+  .desktop-nav {
+    display: none; 
+  }
+  
+  .hamburger {
+    display: block;
+  }
+  
+  .mobile-nav.active {
+    display: flex;
+  }
+  
+  .icon {
+    height: 24px;
+  }
+}
+
+ 
+
+/*.topbar .right .icon {
+  height: 28px;
+  width: auto;
+  transition: opacity 0.2s ease;
+}
+
+.topbar .right .icon:hover {
+  opacity: 0.7;
+}
+
+
+
+/*.topbar .center {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -64,22 +215,8 @@ html {
 
 .topbar .center a:hover {
   color: #aad4ff;
-}
+}*/
 
-.topbar .right {
-  display: flex;
-  align-items: center;
-}
-
-.topbar .right .icon {
-  height: 28px;
-  width: auto;
-  transition: opacity 0.2s ease;
-}
-
-.topbar .right .icon:hover {
-  opacity: 0.7;
-}
 
 .title{
   text-align: center;
@@ -100,7 +237,7 @@ html {
   color: #0051ff;
 }
 
-.description{
+/*.description{
   background-color: #dbeaff;
   max-width: 700px;
   border-left: 6px solid #4b74ff;
@@ -110,14 +247,18 @@ html {
   font-size: 1.2rem;
   line-height: 1.5;
   border-radius: 10px;
-}
+}*/
 
 .description.estesa {
+  background-color: #dbeaff;
+  border-left: 6px solid #4b74ff;
   max-width: 800px;
   margin: 40px auto;
-  padding: 0 20px;
+  padding: 10px 20px;
   line-height: 1.7;
+  text-align: justify;
   font-size: 1.1rem;
+  border-radius: 10px;
 }
 
 .descriptionhome{
@@ -130,6 +271,26 @@ html {
   font-size: 1.2rem;
   line-height: 1.5;
   border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+  .descriptionhome {
+    max-width: 95%;        /* fa sì che la larghezza sia al massimo il 95% dello schermo */
+    margin: 20px auto;     /* margini verticali un po' più larghi */
+    padding: 20px 15px;    /* padding un po' più piccolo per schermi stretti */
+    font-size: 1rem;       /* riduci leggermente la dimensione del testo */
+    text-align: center;   /* se vuoi puoi allineare giustificato per migliorare la leggibilità */
+  }
+}
+
+@media (max-width: 480px) {
+  .description.estesa, .article-description{
+    max-width: 95%;        /* fa sì che la larghezza sia al massimo il 95% dello schermo */
+    margin: 20px auto;     /* margini verticali un po' più larghi */
+    padding: 20px 15px;    /* padding un po' più piccolo per schermi stretti */
+    font-size: 1rem;       /* riduci leggermente la dimensione del testo */
+    text-align: justify;   /* se vuoi puoi allineare giustificato per migliorare la leggibilità */
+  }
 }
 
 .carousel-title {
@@ -258,7 +419,7 @@ footer {
 
 /*articoli*/ 
 body.article-page{
-  background-color: #ededed;
+  background-color: #e1e1e1;
   color: #1b1b1b;
 }
 
